@@ -10,6 +10,8 @@ A single-page static reference for all 78 cards of the Tarot de Marseille: Major
 
 Built with [nanoc](https://nanoc.app).
 
+[GitHub Pages](https://blehwtf.github.io/cheatsheet-tarot-de-marseille/) output.
+
 ## Development
 
 **Prerequisites:** Ruby 3.3+ via [rbenv](https://github.com/rbenv/rbenv) or [asdf](https://asdf-vm.com).
