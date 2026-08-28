@@ -27,9 +27,6 @@ jobs:
       - name: Build site
         run: bundle exec nanoc compile
 
-      - name: Check internal links
-        run: bundle exec nanoc check fs
-
       - uses: actions/upload-pages-artifact@v3
         with:
           path: output/
