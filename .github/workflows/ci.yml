@@ -22,8 +22,14 @@ jobs:
       - name: nanoc compile
         run: bundle exec nanoc compile
 
-      - name: nanoc check fs
-        run: bundle exec nanoc check fs
+      - name: nanoc check
+        run: bundle exec nanoc check html
 
       - name: nanoc check css
         run: bundle exec nanoc check css
+
+      - name: nanoc check internal_links
+        run: bundle exec nanoc check internal_links
+
+      - name: nanoc check external_links
+        run: bundle exec nanoc check external_links
