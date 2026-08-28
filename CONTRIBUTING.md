@@ -3,8 +3,8 @@
 ## Setup
 
 ```sh
-git clone https://github.com/blehwtf/tarotreading.git
-cd tarotreading
+git clone https://github.com/blehwtf/cheatsheet-tarot-de-marseille.git
+cd cheatsheet-tarot-de-marseille
 bundle install
 pre-commit install
 ```
