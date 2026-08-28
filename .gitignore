@@ -1,0 +1,9 @@
+# nanoc output
+output/
+tmp/
+crash.log
+
+# Bundler
+.bundle/
+vendor/bundle/
+
