@@ -5,7 +5,7 @@ on:
     branches-ignore: [main]
 
 jobs:
-  build:
+  test-nanoc:
     runs-on: ubuntu-latest
 
     steps:
