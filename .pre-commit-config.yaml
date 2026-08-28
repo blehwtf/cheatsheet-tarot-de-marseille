@@ -1,0 +1,59 @@
+repos:
+
+  # ── Ruby ────────────────────────────────────────────────────────────────────
+  # Uses the project's own Gemfile so cops/plugins stay in sync with bundler.
+  - repo: local
+    hooks:
+      - id: rubocop
+        name: RuboCop
+        language: ruby
+        entry: bundle exec rubocop
+        args: [--autocorrect]
+        pass_filenames: false  # let rubocop resolve files via AllCops config
+
+      - id: nanoc-compile
+        name: nanoc compile
+        language: ruby
+        entry: bundle exec nanoc compile
+        pass_filenames: false
+        always_run: true
+
+      - id: nanoc-check-fs
+        name: nanoc check fs
+        language: ruby
+        entry: bundle exec nanoc check fs
+        pass_filenames: false
+        always_run: true
+
+      - id: nanoc-check-css
+        name: nanoc check css
+        language: ruby
+        entry: bundle exec nanoc check css
+        pass_filenames: false
+        always_run: true
+
+  # ── YAML ────────────────────────────────────────────────────────────────────
+  - repo: https://github.com/adrienverge/yamllint.git
+    rev: v1.35.1
+    hooks:
+      - id: yamllint
+        args: [--config-file, .yamllint.yaml]
+
+  # ── Markdown ─────────────────────────────────────────────────────────────────
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.43.0
+    hooks:
+      - id: markdownlint
+        args: [--config, .markdownlint.yaml]
+
+  # ── Security: Semgrep ────────────────────────────────────────────────────────
+  - repo: https://github.com/semgrep/semgrep
+    rev: v1.90.0
+    hooks:
+      - id: semgrep
+        args:
+          - --config=p/ruby
+          - --config=p/security-audit
+          - --config=p/secrets
+          - --error
+          - --quiet

@@ -1,0 +1,36 @@
+require:
+  - rubocop-performance
+
+AllCops:
+  NewCops: enable
+  SuggestExtensions: false
+  TargetRubyVersion: 3.3
+  Include:
+    - "Rules"
+    - "**/*.rb"
+  Exclude:
+    - "vendor/**/*"
+    - "output/**/*"
+    - "tmp/**/*"
+
+# ── Style ────────────────────────────────────────────────────────────────────
+
+Style/FrozenStringLiteralComment:
+  Enabled: false  # nanoc Rules DSL doesn't need it
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+
+Style/Documentation:
+  Enabled: false
+
+# ── Layout ───────────────────────────────────────────────────────────────────
+
+Layout/LineLength:
+  Max: 120
+
+# ── Metrics ──────────────────────────────────────────────────────────────────
+
+# Rules files are naturally long DSL blocks — don't penalise them
+Metrics/BlockLength:
+  Enabled: false
