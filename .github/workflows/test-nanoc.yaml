@@ -1,11 +1,11 @@
-name: build-test
+name: test-nanoc
 
 on:
   push:
     branches-ignore: [main]
 
 jobs:
-  build:
+  test-nanoc:
     runs-on: ubuntu-latest
 
     steps:
