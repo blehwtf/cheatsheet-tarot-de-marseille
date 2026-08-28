@@ -6,3 +6,7 @@ crash.log
 .bundle/
 vendor/bundle/
 
+# Editor swap files
+*.swp
+*.swo
+
