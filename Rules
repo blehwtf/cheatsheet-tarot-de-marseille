@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# ── Stylesheets ──────────────────────────────────────────────────────────────
+compile '/stylesheet.css' do
+  write '/stylesheet.css'
+end
+
+# ── Deployment headers file (Netlify / Cloudflare Pages) ─────────────────────
+compile '/_headers' do
+  write '/_headers'
+end
+
+# ── HTML pages ────────────────────────────────────────────────────────────────
+compile '/**/*.html' do
+  layout '/default.*'
+  write item.identifier.to_s
+end
+
+# ── Everything else passes through unchanged ──────────────────────────────────
+compile '/**/*' do
+  write item.identifier.to_s
+end
+
+# ── Layout engine ─────────────────────────────────────────────────────────────
+layout '/**/*', :erb

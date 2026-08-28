@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<%# Security: restrict resource loading to same-origin; inline styles needed for CSS custom-property overrides %>
+<meta http-equiv="Content-Security-Policy"
+      content="default-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self'; base-uri 'self'; form-action 'none';">
+<meta name="referrer" content="no-referrer">
+<title><%= item[:title] || 'Tarot de Marseille' %></title>
+<link rel="stylesheet" href="/stylesheet.css">
+</head>
+<body>
+
+<div class="colorbars">
+  <span class="cb-y"></span>
+  <span class="cb-r"></span>
+  <span class="cb-b"></span>
+  <span class="cb-g"></span>
+  <span class="cb-f"></span>
+</div>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="eyebrow">
+      <span class="regmark"><span class="dot"></span></span>
+      Reader's Reference
+      <span class="rule"></span>
+      78 cards
+    </div>
+    <h1 class="title display">Tarot de <em>Marseille</em></h1>
+    <p class="subtitle">All 78 cards — Major Arcana imagery, all 40 pip cards, all 16 court cards, plus suit domains and the pochoir-stencil color code of the classic French deck.</p>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Page sections">
+  <div class="toc-inner">
+    <a href="#majors">Majors</a>
+    <a href="#suits">Suits</a>
+    <a href="#numbers">Pip Cards</a>
+    <a href="#courts">Court Cards</a>
+    <a href="#colors">Colors</a>
+    <a href="#notes">Reading Notes</a>
+  </div>
+</nav>
+
+<main>
+  <%= yield %>
+</main>
+
+<footer>
+  <span class="regmark"><span class="dot"></span></span>
+  Tarot de Marseille — Reader's Cheat Sheet
+</footer>
+
+</body>
+</html>

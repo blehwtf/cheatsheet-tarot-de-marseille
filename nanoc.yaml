@@ -1,0 +1,10 @@
+string_pattern_type: glob
+
+data_sources:
+  - type: filesystem
+    encoding: utf-8
+
+output_dir: output
+
+index_filenames:
+  - index.html
