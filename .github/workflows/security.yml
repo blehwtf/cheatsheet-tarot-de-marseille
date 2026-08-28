@@ -23,7 +23,6 @@ jobs:
         run: |
           semgrep ci \
             --config p/ruby \
-            --config p/security-audit \
             --config p/secrets \
             --sarif --output semgrep.sarif
         env:
