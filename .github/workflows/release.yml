@@ -15,8 +15,15 @@ jobs:
         with:
           fetch-depth: 0  # full history required for conventional commit scanning
 
-      - uses: blehwtf/.github/.github/actions/semantic-version@main
+      - uses: actions/checkout@v4
+        with:
+          repository: blehwtf/.github
+          ref: main
+          path: .action-repo
+          token: ${{ secrets.ORG_PAT }}
+
+      - uses: ./.action-repo/.github/actions/semantic-version
         with:
           tag-prefix: v
-          version-file: none  # no package.json / VERSION file in this repo
+          version-file: none
           create-release: true
