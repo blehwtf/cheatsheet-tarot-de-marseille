@@ -20,14 +20,14 @@ jobs:
     steps:
       - uses: actions/checkout@v7.0.1
 
-      - uses: ruby/setup-ruby@v1
+      - uses: ruby/setup-ruby@v1.321.0
         with:
           bundler-cache: true
 
       - name: Build site
         run: bundle exec nanoc compile
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5.0.0
         with:
           path: output/
 
@@ -39,4 +39,4 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@5.1
